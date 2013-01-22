@@ -1,0 +1,4 @@
+ejthoughts
+==========
+
+Personal Website
