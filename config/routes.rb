@@ -1,6 +1,6 @@
 EJThoughts::Application.routes.draw do
   resources :tags
-
+  resources :sessions
 
   resources :posts do
     resources :comments
@@ -8,6 +8,8 @@ EJThoughts::Application.routes.draw do
 
   root :to => "home#index"
   get '/about', to: 'home#about', as: :about
+  get '/login', :controller => 'sessions', :action => 'new'
+  get '/logout', :controller => 'sessions', :action => 'destroy'
 
 
   # The priority is based upon order of creation:
