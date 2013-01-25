@@ -7,6 +7,7 @@ EJThoughts::Application.routes.draw do
   end
 
   root :to => "home#index"
+  get '/', to: 'home#index', as: :home
   get '/about', to: 'home#about', as: :about
   get '/login', :controller => 'sessions', :action => 'new'
   get '/logout', :controller => 'sessions', :action => 'destroy'
