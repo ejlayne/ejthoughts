@@ -11,6 +11,9 @@ EJThoughts::Application.routes.draw do
   get '/about', to: 'home#about', as: :about
   get '/login', :controller => 'sessions', :action => 'new'
   get '/logout', :controller => 'sessions', :action => 'destroy'
+  get '/ultimate', :controller => 'posts', :action => 'ultimate', as: :ultimate
+  get '/tech', :controller => 'posts', :action => 'tech', as: :tech
+  get '/life', :controller => 'posts', :action => 'life', as: :life
 
 
   # The priority is based upon order of creation:

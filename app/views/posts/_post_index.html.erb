@@ -1,0 +1,25 @@
+<% post_type = post_type.to_s.titleize %>
+<h1><%= post_type %> posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= link_to post.title.to_s, post %></td>
+    <td><%= post.body %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) if admin?%></td>
+    <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } if admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path if admin? %>

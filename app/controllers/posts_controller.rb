@@ -9,6 +9,33 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+  
+  def ultimate
+    @posts = Post.includes(:tags).where('tags.name' => 'foo')
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+  
+  def tech
+    @posts = Post.includes(:tags).where('tags.name' => 'bar')
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+  
+  def life
+    @posts = Post.includes(:tags).where('tags.name' => 'life')
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
 
   # GET /posts/1
   # GET /posts/1.json
