@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
   
   def ultimate
-    @posts = Post.includes(:tags).where('tags.name' => 'foo')
+    @posts = Post.includes(:tags).where('tags.name' => ['ultimate','Ultimate'])
     
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
   
   def tech
-    @posts = Post.includes(:tags).where('tags.name' => 'bar')
+    @posts = Post.includes(:tags).where('tags.name' => ['tech','Tech'])
     
     respond_to do |format|
       format.html # index.html.erb
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   end
   
   def life
-    @posts = Post.includes(:tags).where('tags.name' => 'life')
+    @posts = Post.includes(:tags).where('tags.name' => ['life','Life'])
     
     respond_to do |format|
       format.html # index.html.erb
